@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<beans:bean id="roleHierarchy" class="org.springframework.security.userdetails.hierarchicalroles.RoleHierarchyImpl" >
+		<beans:property name="hierarchy">
+			<beans:value>
+		        ROLE_SUPERVISOR > ROLE_ADMIN
+		        ROLE_ADMIN > ROLE_AUTHENTICATED
+			</beans:value>
+		</beans:property>
+	</beans:bean>
+	
+	<beans:bean id="userDetailsService" class="org.springframework.security.userdetails.hierarchicalroles.UserDetailsServiceWrapper" >
+		<beans:property name="roleHierarchy" ref="roleHierarchy" />
+	</beans:bean>
+
+	<http auto-config="false">
+		<intercept-url pattern="/login.jsp*" filters="none" requires-channel="http"/>
+		<intercept-url pattern="/css/**" filters="none"/>
+		<intercept-url pattern="/images/**" filters="none"/>
+		<intercept-url pattern="/logs/**"  filters="none"/>
+		<intercept-url pattern="/**"  filters="none"/>
+		<form-login login-page="/login.jsp" default-target-url="/login.html" always-use-default-target="true" authentication-failure-url="/login.jsp?login_error=1"/>
+		<!-- 
+		<intercept-url pattern="/logs/**" access="ROLE_ADMIN" filters="none"/>
+		<intercept-url pattern="/**" access="ROLE_ADMIN" requires-channel="http"/>
+		<form-login login-page="/login.jsp" default-target-url="/login.html" always-use-default-target="true" authentication-failure-url="/login.jsp?login_error=1"/>
+		 -->
+		<anonymous />
+		<http-basic />
+		<logout logout-success-url="/login.jsp?logout_success=1"/>
+	</http>
+
+</beans:beans>
