@@ -1,5 +1,5 @@
-/bin
-project_workspace/.metadata
-project_workspace/RemoteSystemsTempFiles
+**/.metadata
+**/RemoteSystemsTempFiles
+**/.settings
 .classpath
 *.class
