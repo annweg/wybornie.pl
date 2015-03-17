@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;pl.wybornie.controllers.userController&apos; to &apos;UserController&apos;&#x0D;&#x0A;- Original project: &apos;wybornie&apos;&#x0D;&#x0A;- Original element: &apos;pl.wybornie.controllers.userController&apos;&#x0D;&#x0A;- Renamed element: &apos;pl.wybornie.controllers.UserController&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;userController&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;pl.wybornie.controllers{userController.java[userController" matchStrategy="1" name="UserController" qualified="false" references="true" similarDeclarations="false" stamp="1426583263158" textual="false" version="1.0"/>
-</session>

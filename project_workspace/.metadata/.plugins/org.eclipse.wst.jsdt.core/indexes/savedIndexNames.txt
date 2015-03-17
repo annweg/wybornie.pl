@@ -1,7 +1,0 @@
-INDEX VERSION 1.3+D:\wybornie.pl\project_workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-468660393.index
-408855246.index
-149883253.index
-4190908020.index
-1266317881.index
-1401611477.index
