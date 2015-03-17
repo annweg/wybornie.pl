@@ -2,5 +2,6 @@
 **/RemoteSystemsTempFiles
 **/.settings
 **/build
+**/Servers
 .classpath
 *.class
