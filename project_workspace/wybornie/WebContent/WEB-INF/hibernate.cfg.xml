@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</property>
+		<property name="hibernate.cache.provider_configuration_file_resource_path">ehcache.xml</property>
+		
+		<mapping class="pl.wybornie.entity.CookBook" />
+		<mapping class="pl.wybornie.entity.Ingredient" />
+		<mapping class="pl.wybornie.entity.Recipe" />
+		<mapping class="pl.wybornie.entity.User" />
+	</session-factory>
+
+</hibernate-configuration>
+
