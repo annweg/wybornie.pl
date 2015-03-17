@@ -3,5 +3,6 @@
 **/.settings
 **/build
 **/Servers
+**/.gitignore
 .classpath
 *.class
