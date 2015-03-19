@@ -1,5 +1,9 @@
 package pl.wybornie.entity;
 
-public class CookBook {
+import javax.persistence.Entity;
+
+@SuppressWarnings("serial")
+@Entity
+public class CookBook extends EntityBean {
 
 }
