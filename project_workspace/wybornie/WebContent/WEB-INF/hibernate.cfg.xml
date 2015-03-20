@@ -8,10 +8,19 @@
 		<property name="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</property>
 		<property name="hibernate.cache.provider_configuration_file_resource_path">ehcache.xml</property>
 		
+		<mapping class="pl.wybornie.entity.Category" />
+		<mapping class="pl.wybornie.entity.CategoryGroup" />
+		<mapping class="pl.wybornie.entity.City" />
 		<mapping class="pl.wybornie.entity.CookBook" />
+		<mapping class="pl.wybornie.entity.Country" />
+		<mapping class="pl.wybornie.entity.EntityBean" />
 		<mapping class="pl.wybornie.entity.Ingredient" />
+		<mapping class="pl.wybornie.entity.Province" />
 		<mapping class="pl.wybornie.entity.Recipe" />
+		<mapping class="pl.wybornie.entity.RecipeCategory" />
+		<mapping class="pl.wybornie.entity.RecipeItem" />
 		<mapping class="pl.wybornie.entity.User" />
+		<mapping class="pl.wybornie.entity.UserCookBook" />
 	</session-factory>
 
 </hibernate-configuration>

@@ -1,8 +1,11 @@
 package pl.wybornie.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -20,8 +23,11 @@ public class User extends EntityBean {
 	@OneToOne
 	private City city;
 	
-	@OneToMany
+	@OneToOne
 	private CookBook cookBook;
+	
+	@OneToMany(fetch=FetchType.EAGER, mappedBy="userCookBook")
+	private List<UserCookBook> userCookBooks = new ArrayList<UserCookBook>();
 
 	public String getNick() {
 		return nick;
@@ -85,5 +91,13 @@ public class User extends EntityBean {
 
 	public void setCookBook(CookBook cookBook) {
 		this.cookBook = cookBook;
+	}
+
+	public List<UserCookBook> getUserCookBooks() {
+		return userCookBooks;
+	}
+
+	public void setUserCookBooks(List<UserCookBook> userCookBooks) {
+		this.userCookBooks = userCookBooks;
 	}
 }
