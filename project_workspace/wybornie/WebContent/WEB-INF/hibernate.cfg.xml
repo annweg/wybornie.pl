@@ -17,10 +17,14 @@
 		<mapping class="pl.wybornie.entity.cookBook.Category" />
 		<mapping class="pl.wybornie.entity.cookBook.CategoryGroup" />
 		<mapping class="pl.wybornie.entity.cookBook.CookBook" />
+		<mapping class="pl.wybornie.entity.cookBook.CookBookCategory" />
+		<mapping class="pl.wybornie.entity.cookBook.CookBookRecipe" />
+		<mapping class="pl.wybornie.entity.cookBook.Difficulty" />
 		<mapping class="pl.wybornie.entity.cookBook.Ingredient" />
 		<mapping class="pl.wybornie.entity.cookBook.Recipe" />
 		<mapping class="pl.wybornie.entity.cookBook.RecipeCategory" />
 		<mapping class="pl.wybornie.entity.cookBook.RecipeItem" />
+		<mapping class="pl.wybornie.entity.cookBook.TimeConsuming" />
 		<mapping class="pl.wybornie.entity.cookBook.UserCookBook" />
 	</session-factory>
 
