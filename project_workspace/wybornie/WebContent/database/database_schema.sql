@@ -186,3 +186,7 @@ CREATE TABLE IF NOT EXISTS `usercookbook` (
   `id_cookBook` bigint(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+ALTER TABLE `user`
+	ADD UNIQUE INDEX `nick` (`nick`),
+	ADD UNIQUE INDEX `email` (`email`);
