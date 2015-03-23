@@ -1,8 +1,15 @@
-package pl.wybornie.entity;
+package pl.wybornie.entity.cookBook;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import pl.wybornie.entity.EntityBean;
+import pl.wybornie.entity.User;
 
 @SuppressWarnings("serial")
 @Entity
@@ -17,6 +24,9 @@ public class CookBook extends EntityBean {
 	
 	@OneToMany
 	private Recipe recipe;
+	
+	@OneToMany(fetch=FetchType.EAGER, mappedBy="cookBookCategory")
+	private List<CookBookCategory> categories = new ArrayList<CookBookCategory>();
 
 	public String getDescription_pl() {
 		return description_pl;

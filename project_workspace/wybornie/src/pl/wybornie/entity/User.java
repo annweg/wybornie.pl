@@ -9,6 +9,9 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import pl.wybornie.entity.cookBook.CookBook;
+import pl.wybornie.entity.cookBook.UserCookBook;
+
 @SuppressWarnings("serial")
 @Entity
 public class User extends EntityBean {

@@ -1,10 +1,14 @@
-package pl.wybornie.entity;
+package pl.wybornie.entity.cookBook;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
+import pl.wybornie.entity.EntityBean;
+import pl.wybornie.entity.User;
+
+@SuppressWarnings("serial")
 @Entity
-public class UserCookBook {
+public class UserCookBook extends EntityBean {
 	
 	@ManyToOne
 	private User user;

@@ -1,11 +1,14 @@
-package pl.wybornie.entity;
+package pl.wybornie.entity.cookBook;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import pl.wybornie.entity.EntityBean;
+
+@SuppressWarnings("serial")
 @Entity
-public class Recipe {
+public class Recipe extends EntityBean {
 	
 	private String description_pl;
 	private String description_en;
