@@ -25,8 +25,8 @@ public class CookBook extends EntityBean {
 	@OneToMany
 	private Recipe recipe;
 	
-	@OneToMany(fetch=FetchType.EAGER, mappedBy="cookBookCategory")
-	private List<CookBookCategory> categories = new ArrayList<CookBookCategory>();
+	@OneToMany(fetch=FetchType.EAGER, mappedBy="cookBookRecipe")
+	private List<CookBookRecipe> recipes = new ArrayList<CookBookRecipe>();
 
 	public String getDescription_pl() {
 		return description_pl;
@@ -66,5 +66,13 @@ public class CookBook extends EntityBean {
 
 	public void setRecipe(Recipe recipe) {
 		this.recipe = recipe;
+	}
+
+	public List<CookBookRecipe> getRecipes() {
+		return recipes;
+	}
+
+	public void setRecipes(List<CookBookRecipe> recipes) {
+		this.recipes = recipes;
 	}
 }

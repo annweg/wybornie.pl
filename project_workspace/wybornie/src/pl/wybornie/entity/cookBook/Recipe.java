@@ -1,6 +1,10 @@
 package pl.wybornie.entity.cookBook;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -23,6 +27,12 @@ public class Recipe extends EntityBean {
 	
 	@OneToOne
 	private TimeConsuming timeConsuming;
+	
+	@OneToMany(fetch=FetchType.EAGER, mappedBy="recipeCategory")
+	private List<RecipeCategory> categories = new ArrayList<RecipeCategory>();
+	
+	@OneToMany(fetch=FetchType.EAGER, mappedBy="recipeItem")
+	private List<RecipeItem> items = new ArrayList<RecipeItem>();
 
 	public String getDescription_pl() {
 		return description_pl;
@@ -78,5 +88,21 @@ public class Recipe extends EntityBean {
 
 	public void setTimeConsuming(TimeConsuming timeConsuming) {
 		this.timeConsuming = timeConsuming;
+	}
+
+	public List<RecipeCategory> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(List<RecipeCategory> categories) {
+		this.categories = categories;
+	}
+
+	public List<RecipeItem> getItems() {
+		return items;
+	}
+
+	public void setItems(List<RecipeItem> items) {
+		this.items = items;
 	}
 }
