@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `city` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_polish_ci NOT NULL,
   `id_province` bigint(20) NOT NULL,
-  `id_country` bigint(20) NOT NULL,
+  `id_country` bigint(20) NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
