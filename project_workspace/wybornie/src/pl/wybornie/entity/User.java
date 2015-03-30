@@ -2,18 +2,22 @@ package pl.wybornie.entity;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import pl.wybornie.entity.cookBook.CookBook;
 import pl.wybornie.entity.cookBook.UserCookBook;
 
 @SuppressWarnings("serial")
 @Entity
+@Table(name = "user")
 public class User extends EntityBean {
 
 	private String nick;
@@ -22,6 +26,24 @@ public class User extends EntityBean {
 	private String firstName;
 	private String lastName;
 	private Date birthDate;
+	private boolean enabled;
+	private Set<UserRole> userRole = new HashSet<UserRole>(0);
+	 
+	public User() {
+	}
+	
+	public User(String nick, String password, boolean enabled) {
+		this.nick = nick;
+		this.password = password;
+		this.enabled = enabled;
+	}
+	
+	public User(String nick, String password, boolean enabled, Set<UserRole> userRole) {
+		this.nick = nick;
+		this.password = password;
+		this.enabled = enabled;
+		this.userRole = userRole;
+	}
 	
 	@OneToOne
 	private City city;
@@ -102,5 +124,22 @@ public class User extends EntityBean {
 
 	public void setUserCookBooks(List<UserCookBook> userCookBooks) {
 		this.userCookBooks = userCookBooks;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	public Set<UserRole> getUserRole() {
+		return this.userRole;
+	}
+ 
+	public void setUserRole(Set<UserRole> userRole) {
+		this.userRole = userRole;
 	}
 }

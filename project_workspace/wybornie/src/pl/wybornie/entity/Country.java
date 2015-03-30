@@ -1,9 +1,11 @@
 package pl.wybornie.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity
+@Table(name = "country")
 public class Country extends EntityBean {
 
 	private String pl;
