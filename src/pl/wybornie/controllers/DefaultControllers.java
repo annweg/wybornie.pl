@@ -12,4 +12,12 @@ public class DefaultControllers {
 	      model.addAttribute("message", "Hello Spring MVC Framework!");
 	      return "hello";
 	   }
+	
+	@RequestMapping(value = "/admin**", method = RequestMethod.GET)
+	public String adminPage(ModelMap model) {
+ 
+		model.addAttribute("message", "ADMIN PAGE");
+	    return "admin";
+ 
+	}
 }
