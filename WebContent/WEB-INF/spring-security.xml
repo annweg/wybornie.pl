@@ -7,15 +7,21 @@
 	http://www.springframework.org/schema/security/spring-security-4.0.xsd">
  
 	<http auto-config="true">
-		<intercept-url pattern="/admin**" access="hasRole('ROLE_USER')" />
+	
+		<intercept-url pattern="/sec/moderation.html" access="ROLE_MODERATOR" />
+		<intercept-url pattern="/admin/*" access="ROLE_ADMIN" />
+		
+		<form-login login-page="/user-login.html" 
+			default-target-url="/success-login.html"
+			authentication-failure-url="/error-login.html" />
+		<logout logout-success-url="/index.html" />
+		
 	</http>
  
 	<authentication-manager>
-	  <authentication-provider>
-	    <user-service>
-		<user name="root" password="root123" authorities="ROLE_USER" />
-	    </user-service>
-	  </authentication-provider>
+		<authentication-provider user-service-ref="customUserDetailsService">
+			<password-encoder hash="plaintext" />
+		</authentication-provider>
 	</authentication-manager>
  
 </beans:beans>
