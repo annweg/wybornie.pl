@@ -4,6 +4,5 @@ import pl.wybornie.entity.Role;
 
 public interface RoleService {
 	
-	public Role getRole(int id);
-
+	public Role getRole(Long id);
 }

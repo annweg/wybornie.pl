@@ -44,20 +44,22 @@ public class CustomUserDetailsService implements UserDetailsService {
         );
     }
      
-    public Collection<? extends GrantedAuthority> getAuthorities(Integer role) {
+    public Collection<? extends GrantedAuthority> getAuthorities(Long role) {
         List<GrantedAuthority> authList = getGrantedAuthorities(getRoles(role));
         return authList;
     }
      
-    public List<String> getRoles(Integer role) {
+    public List<String> getRoles(Long role) {
  
         List<String> roles = new ArrayList<String>();
  
-        if (role.intValue() == 1) {
+        if (role.longValue() == 1) {
             roles.add("ROLE_MODERATOR");
             roles.add("ROLE_ADMIN");
-        } else if (role.intValue() == 2) {
+        } else if (role.longValue() == 2) {
             roles.add("ROLE_MODERATOR");
+        } else if (role.longValue() == 3){
+        	roles.add("ROLE_USER");
         }
         return roles;
     }

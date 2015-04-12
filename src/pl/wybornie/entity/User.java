@@ -2,17 +2,15 @@ package pl.wybornie.entity;
 
 import javax.persistence.*;
 
-
 @Entity
-@Table(name="users")
+@Table(name="user")
 public class User {
      
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
      
     private String login;
-     
     private String password;
      
     @OneToOne(cascade=CascadeType.ALL)
@@ -22,11 +20,11 @@ public class User {
     )
     private Role role;
  
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
  
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
  
