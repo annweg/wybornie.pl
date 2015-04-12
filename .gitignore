@@ -1,1 +1,8 @@
-build/
+**/.metadata
+**/RemoteSystemsTempFiles
+**/.settings
+**/build
+**/Servers
+**/.gitignore
+.classpath
+*.class
