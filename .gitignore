@@ -6,4 +6,4 @@
 **/.gitignore
 .classpath
 *.class
-.project
+**/.project
