@@ -16,6 +16,6 @@
 	
 	<body>
 
-<p>Ala ma kota</p>
+<p>Tu bêdzie wyszukiwarka </p>
 	</body>
 </html>

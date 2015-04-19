@@ -17,18 +17,12 @@ public class DefaultControllers {
         return new ModelAndView("home");
     }
      
-    @RequestMapping(value="/sec/moderation", method=RequestMethod.GET)
-    public ModelAndView moderatorPage() {
-        return new ModelAndView("moderation");
+    @RequestMapping(value="/search", method=RequestMethod.GET)
+    public ModelAndView searchingPage() {
+    	return new ModelAndView("search");
     }
-     
-    @RequestMapping(value="/admin/first", method=RequestMethod.GET)
-    public ModelAndView firstAdminPage() {
-        return new ModelAndView("admin-first");
-    }
-     
-    @RequestMapping(value="/admin/second", method=RequestMethod.GET)
-    public ModelAndView secondAdminPage() {
-        return new ModelAndView("admin-second");
-    }
+//    @RequestMapping(value="/login", method=RequestMethod.GET)
+//    public ModelAndView moderatorPage() {
+//        return new ModelAndView("login-form");
+//    }
 }

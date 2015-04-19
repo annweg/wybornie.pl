@@ -2,13 +2,23 @@ package pl.wybornie.entity;
 
 import java.util.Date;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="user")
-public class User extends EntityBean {
-     
-     
+public class User {
+    
+    @Id
+    @GeneratedValue
+    private Long id;
+    
     private String login;
     private String password;
     private String email;
@@ -22,7 +32,12 @@ public class User extends EntityBean {
         inverseJoinColumns = {@JoinColumn(name="role_id", referencedColumnName="id")}
     )
     private Role role;   
+    
+	@OneToOne
+	private City city;	
  
+	private Date created = new Date();
+	
     public String getLogin() {
         return login;
     }
@@ -77,5 +92,29 @@ public class User extends EntityBean {
 
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
-	}   
+	}
+
+	public City getCity() {
+		return city;
+	}
+
+	public void setCity(City city) {
+		this.city = city;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}  
 }
