@@ -16,6 +16,5 @@
 	
 	<body>
 
-<p>Ala ma kota</p>
 	</body>
 </html>

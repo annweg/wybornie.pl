@@ -13,7 +13,7 @@
 		<intercept-url pattern="/user-login" access="hasRole('ROLE_USER')" />
 		
 		<form-login login-page="/user-login.html" 
-			default-target-url="/success-login.html"
+			default-target-url="/home.html"
 			authentication-failure-url="/error-login.html" />
 		<logout logout-success-url="/index.html" />
 		<csrf/>

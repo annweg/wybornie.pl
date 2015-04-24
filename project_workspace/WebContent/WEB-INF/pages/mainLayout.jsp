@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-2"
     pageEncoding="ISO-8859-2"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+<%@page import="java.lang.String" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -78,13 +79,19 @@
 					<a href="search.html"><img src="<c:url value="/img/wyszukaj.png"/>"/></a>
 					<a href="#"><img src="<c:url value="/img/przelicznik.png"/>"/></a>
 					<a href="#"><img src="<c:url value="/img/poczytaj.png"/>"/></a>
+					<%
+						if (request.getAttribute("logged") != null && request.getAttribute("logged").equals("success")) {
+					%>
+						<a href="#"><img src="<c:url value="/img/konto.png"/>"/></a>
+					<% } %>
+	
+	
 					<a href="#"><img src="<c:url value="/img/onas.png"/>"/></a>
 					<!-- jest pomysl na oddzielenie menu tak jak to wczesniej zrobilam i w prawej czesci info dla zalogowanych osob -->
 				</div>
 			</div>
 			
 			<fmt:message key="hellou" />
-
 		
 <!-- 				<p>This is Home page. It's available for all users.<br/> -->
 <!-- 				</p> -->

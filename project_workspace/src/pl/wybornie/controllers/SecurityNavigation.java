@@ -1,5 +1,7 @@
 package pl.wybornie.controllers;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,9 +22,9 @@ public class SecurityNavigation {
         return modelAndView;
     }
      
-    @RequestMapping(value="/success-login", method=RequestMethod.GET)
-    public ModelAndView successLogin() {
-        return new ModelAndView("success-login");
+    @RequestMapping(value="/home", method=RequestMethod.GET)
+    public String successLogin(HttpServletRequest request) {
+    	request.setAttribute("logged", "success");
+    	return "mainLayout";
     }
- 
 }
