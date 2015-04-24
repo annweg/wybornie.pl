@@ -61,3 +61,25 @@ body {
   	padding-left: 25px;
   	padding-top: 25px;
 }
+
+#logingForm {
+	padding-top: 20px
+}
+#logingForm a:link, a:visited, a:hover, a:active {
+	color: #e4e4dc;
+	text-decoration: none;
+}
+#logingForm a:hover {
+  	font-weight: bolder;
+  	font-size: 16px;
+}
+.wide {
+	height: 30px;
+}
+.wide2 {
+	height: 40px;
+}
+#loginButton {
+	width: 100%;
+	color: #434041;
+}

@@ -3,6 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@page import="java.lang.String" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -44,29 +45,7 @@
 						<div class="dropdown-menu pull-right drops">
 							
 							<div id="logging">
-								<c:if test="${error == true}">
-									<b class="error">Invalid login or password.</b>
-								</c:if>
-								
-								<form method="post" action="<c:url value='login'/>" >
-								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-								<table>
-								<tbody>
-								<tr>
-								<td>Login:</td>
-								<td><input type="text" name="username" id="username" size="30" maxlength="40"  /></td>
-								</tr>
-								<tr>
-								<td>Password:</td>
-								<td><input type="password" name="password" id="password" size="30" maxlength="32" /></td>
-								</tr>
-								<tr>
-								<td></td>
-								<td><input type="submit" value="Login" /></td>
-								</tr>
-								</tbody>
-								</table>
-								</form>	
+								<%@ include file="/WEB-INF/pages/account/loginForm.jsp"%>
 							</div>
 						</div>
 					</div>
@@ -79,13 +58,9 @@
 					<a href="search.html"><img src="<c:url value="/img/wyszukaj.png"/>"/></a>
 					<a href="#"><img src="<c:url value="/img/przelicznik.png"/>"/></a>
 					<a href="#"><img src="<c:url value="/img/poczytaj.png"/>"/></a>
-					<%
-						if (request.getAttribute("logged") != null && request.getAttribute("logged").equals("success")) {
-					%>
+					<sec:authorize access="hasRole('ROLE_USER')">
 						<a href="#"><img src="<c:url value="/img/konto.png"/>"/></a>
-					<% } %>
-	
-	
+					</sec:authorize>
 					<a href="#"><img src="<c:url value="/img/onas.png"/>"/></a>
 					<!-- jest pomysl na oddzielenie menu tak jak to wczesniej zrobilam i w prawej czesci info dla zalogowanych osob -->
 				</div>

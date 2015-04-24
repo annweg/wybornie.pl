@@ -56,8 +56,10 @@ public class CustomUserDetailsService implements UserDetailsService {
         if (role.longValue() == 1) {
             roles.add("ROLE_MODERATOR");
             roles.add("ROLE_ADMIN");
+            roles.add("ROLE_USER");
         } else if (role.longValue() == 2) {
             roles.add("ROLE_MODERATOR");
+            roles.add("ROLE_USER");
         } else if (role.longValue() == 3){
         	roles.add("ROLE_USER");
         }
