@@ -27,4 +27,10 @@ public class SecurityNavigation {
     	request.setAttribute("logged", "success");
     	return "mainLayout";
     }
+    
+    @RequestMapping(value="/logout", method=RequestMethod.GET)
+    public String logoutAction(HttpServletRequest request) {
+    	request.setAttribute("logged", "false");
+    	return "mainLayout";
+    }
 }

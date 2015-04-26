@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-2"
     pageEncoding="ISO-8859-2"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<%@page import="java.lang.String" %>
-
+<%@ include file="/WEB-INF/pages/include.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -31,19 +26,23 @@
 					<div id="help">
 						<a href="#" data-toggle="dropdown"><img src="<c:url value="/img/help.png"/>"/></a>
 						<div class="dropdown-menu pull-right drops">
-						 siema
+						 	<%@ include file="/WEB-INF/pages/info.jsp"%>
 						</div>
 					</div>
 					
 					<div id="register">
-						<a href="#"><img src="<c:url value="/img/add.png"/>"/></a>
+						<a href="#" data-toggle="dropdown" onclick="enableMenuForms()">
+							<img src="<c:url value="/img/add.png"/>"/>
+						</a>
+						<div class="dropdown-menu pull-right drops" style="direction: ltr">
+							<%@ include file="/WEB-INF/pages/account/addUser.jsp"%>
+						</div>
 					</div>
 					
 					<div id="login">
 						<a href="#" data-toggle="dropdown" onclick="enableMenuForms()">
 						<img src="<c:url value="/img/login.png"/>"/></a>
 						<div class="dropdown-menu pull-right drops">
-							
 							<div id="logging">
 								<%@ include file="/WEB-INF/pages/account/loginForm.jsp"%>
 							</div>
@@ -62,19 +61,15 @@
 						<a href="#"><img src="<c:url value="/img/konto.png"/>"/></a>
 					</sec:authorize>
 					<a href="#"><img src="<c:url value="/img/onas.png"/>"/></a>
-					<!-- jest pomysl na oddzielenie menu tak jak to wczesniej zrobilam i w prawej czesci info dla zalogowanych osob -->
 				</div>
 			</div>
 			
-			<fmt:message key="hellou" />
-		
-<!-- 				<p>This is Home page. It's available for all users.<br/> -->
-<!-- 				</p> -->
-<%-- 				<c:url var="logoutUrl" value="/logout"/> --%>
-<%-- 				<form action="${logoutUrl}" method="post"> --%>
-<!-- 			  		<input type="submit" value="Log out" /> -->
-<%-- 			  		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> --%>
-<!-- 				</form> -->
+			<div class="row">
+				<div class="col-xs-12">
+					Tu bêdzie g³ówna czê¶æ aplikacji.
+				</div>
+			</div>
+			
 		</div>
 	</body>
 </html>

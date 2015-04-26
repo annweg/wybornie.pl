@@ -70,16 +70,14 @@ body {
 	text-decoration: none;
 }
 #logingForm a:hover {
+	direction: ltr;
   	font-weight: bolder;
   	font-size: 16px;
 }
-.wide {
-	height: 30px;
-}
-.wide2 {
-	height: 40px;
-}
 #loginButton {
 	width: 100%;
+	color: #434041;
+}
+.forms {
 	color: #434041;
 }

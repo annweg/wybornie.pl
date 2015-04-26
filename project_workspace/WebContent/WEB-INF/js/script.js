@@ -3,3 +3,8 @@ function enableMenuForms() {
 		e.stopPropagation();
 	});
 }
+
+function removeLoginForm() {
+	var loginForm = document.getElementById('logingForm');
+	loginForm.remove();
+}
