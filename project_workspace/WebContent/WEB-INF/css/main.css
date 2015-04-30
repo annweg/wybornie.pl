@@ -81,3 +81,6 @@ body {
 .forms {
 	color: #434041;
 }
+.error {
+	color: red;
+}

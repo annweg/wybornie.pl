@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-2"
     pageEncoding="ISO-8859-2"%>
 <%@ include file="/WEB-INF/pages/include.jsp" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,23 +10,25 @@
 </head>
 <body>
 
-	<form:form method="post" action="addUser">
+	<form:form method="POST" action="user" modelAttribute="user">
 		<table>
 			<tr>
 				<td>Login </td>
 				<td>: </td>
 				<td>
-					<input type="text" name="username" id="username" />
+					<input type="text" name="login" id="login"/>
 				</td>
 				<td>* </td>
+				<td><form:errors path="login" cssClass="error" /></td>
 			</tr>
 			<tr>
 				<td>E-mail </td>
 				<td>: </td>
 				<td>
-					<input type="text" name="email" id="email" />
+					<form:input type="text" path="email" />
 				</td>
 				<td>* </td>
+				<td><form:errors path="email" cssClass="error" /></td>
 			</tr>
 			<tr>
 				<td>Has³o </td>
@@ -34,22 +37,7 @@
 					<input type="password" name="password" id="password" />
 				</td>
 				<td>* </td>
-			</tr>
-			<tr>
-				<td>Imiê </td>
-				<td>: </td>
-				<td>
-					<input type="text" name="firstName" id="firstName" />
-				</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Nazwisko </td>
-				<td>: </td>
-				<td>
-					<input type="text" name="lastName" id="lastName" />
-				</td>
-				<td></td>
+				<td><form:errors path="password" cssClass="error" /></td>
 			</tr>
 			
 			<tr>

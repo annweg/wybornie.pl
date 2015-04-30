@@ -17,7 +17,7 @@ import org.springframework.security.core.userdetails.User;
 import pl.wybornie.dao.UserDAO;
 
 @Service
-@Transactional(readOnly=true)
+@Transactional
 public class CustomUserDetailsService implements UserDetailsService {
      
     @Autowired

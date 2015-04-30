@@ -40,4 +40,18 @@ public class UserDAOImpl implements UserDAO {
 	public void saveOrUpdateUser(User user) {
 		sessionFactory.getCurrentSession().saveOrUpdate(user);
 	}
+
+	@Override
+	public List<?> getUserByEmail(String email) {
+		String selectQuery = "SELECT email FROM user us WHERE us.email LIKE '" + email +"' ";
+		Query query = openSession().createSQLQuery(selectQuery);
+		return query.list();
+	}
+
+	@Override
+	public List<?> getUserByLogin(String login) {
+		String selectQuery = "SELECT email FROM user us WHERE us.login LIKE '" + login + "' ";
+		Query query = openSession().createSQLQuery(selectQuery);
+		return query.list();
+	}
 }

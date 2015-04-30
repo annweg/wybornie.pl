@@ -31,10 +31,10 @@
 					</div>
 					
 					<div id="register">
-						<a href="#" data-toggle="dropdown" onclick="enableMenuForms()">
+						<a href="#" data-toggle="dropdown" id="addUser" onclick="enableMenuForms()">
 							<img src="<c:url value="/img/add.png"/>"/>
 						</a>
-						<div class="dropdown-menu pull-right drops" style="direction: ltr">
+						<div class="dropdown-menu pull-right drops" style="direction: ltr; width: 800px">
 							<%@ include file="/WEB-INF/pages/account/addUser.jsp"%>
 						</div>
 					</div>
